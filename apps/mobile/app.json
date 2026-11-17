@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Membrant",
+    "slug": "membrant",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "membrant",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.membrant.mobile"
+    },
+    "android": {
+      "package": "app.membrant.mobile"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      "expo-status-bar"
+    ],
+    "web": {
+      "bundler": "metro",
+      "name": "Membrant Daily"
+    }
+  }
+}

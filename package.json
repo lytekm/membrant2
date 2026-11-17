@@ -1,0 +1,36 @@
+{
+  "name": "membrant",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": "^22.13.0 || ^24.3.0 || >=26.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c green,blue \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev --workspace @membrant/web",
+    "dev:api": "npm run dev --workspace @membrant/api",
+    "dev:mobile": "npm run start --workspace @membrant/mobile",
+    "build": "npm run build --workspace @membrant/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "format": "prettier --write apps packages tests README.md docs/mvp *.json *.ts"
+  },
+  "overrides": {
+    "react-native": "0.88.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.19.0",
+    "concurrently": "^9.2.1",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
